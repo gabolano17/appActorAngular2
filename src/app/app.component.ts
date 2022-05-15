@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend-angular';
+  title = 'Listar actores en Angular';
+
+  refrescarPage(){
+    window.location.reload();
+  }
 }

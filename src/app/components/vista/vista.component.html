@@ -1,0 +1,19 @@
+<table class="table text-center table-dark table-bordered border-danger table-striped">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let actor of actors | paginate: {itemsPerPage: 10, currentPage: pageActual}">
+            <td>{{actor.actor_id}}</td>
+            <td>{{actor.first_name}}</td>
+            <td>{{actor.last_name}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="text-center">
+    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+</div>
