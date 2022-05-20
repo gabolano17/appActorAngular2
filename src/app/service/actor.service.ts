@@ -15,7 +15,7 @@ export class ActorService {
   getAllActors(): Observable<Actor[]>{
     return this.http.get<Actor[]>(this.url)
   }
-  getActorId(id:number): Observable<Actor[]>{
-    return this.http.get<Actor[]>(`${this.url}/${id}`)
+  getActorId(id:number): Observable<Actor>{
+    return this.http.get<Actor>(`${this.url}/${id}`)
   }
 }

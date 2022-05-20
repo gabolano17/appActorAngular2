@@ -1,0 +1,15 @@
+<div class="ng-autocomplete">
+    <ng-autocomplete
+    [data]="actors"
+    [searchKeyword]="keyword"
+    placeholder="Select a Actor"
+    [itemTemplate]="itemTemplate"
+    (selected)="getIdValue($event)" 
+    (inputCleared)="inputVacio()"
+    >
+    </ng-autocomplete>
+
+    <ng-template #itemTemplate let-a>
+        <a [innerHTML]="a.first_name"></a>
+    </ng-template>
+</div>

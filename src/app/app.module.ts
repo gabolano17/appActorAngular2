@@ -7,11 +7,13 @@ import { VistaComponent } from './components/vista/vista.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VistaComponent,
+    BuscadorComponent,
   ],
   imports: [
     BrowserModule,

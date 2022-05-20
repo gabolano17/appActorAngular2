@@ -1,3 +1,11 @@
+<div>
+    <app-buscador></app-buscador>
+    <div class="my-3">
+        <button class="btn btn-danger col-md-8" (click)="submitear()">Search</button>
+        <button (click)="refrescarPage()" type="button" class="btn btn-info col-md-4">Refresh</button>
+    </div>
+</div>
+
 <table class="table text-center table-dark table-bordered border-danger table-striped">
     <thead class="table-danger">
         <tr>
@@ -6,7 +14,7 @@
             <td>Last Name</td>
         </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="!searched; else actorId">
         <tr *ngFor="let actor of actors | paginate: {itemsPerPage: 10, currentPage: pageActual}">
             <td>{{actor.actor_id}}</td>
             <td>{{actor.first_name}}</td>
@@ -17,3 +25,11 @@
 <div class="text-center">
     <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
 </div>
+
+<ng-template #actorId>
+    <tr>
+        <td>{{actorById.actor_id}}</td>
+        <td>{{actorById.first_name}}</td>
+        <td>{{actorById.last_name}}</td>
+    </tr>
+</ng-template>
